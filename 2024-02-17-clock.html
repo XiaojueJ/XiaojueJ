@@ -1,0 +1,56 @@
+<body>
+    <meta charset="utf8" />
+
+
+
+    <div id="clock">
+        <div>
+            <span id="hours"></span>
+            <span class="text"> 时 : </span>
+        </div>
+
+        <div>
+            <span id="minutes"></span>
+            <span class="text"> 分 : </span>
+        </div>
+        <div>
+            <span id="seconds"></span>
+            <span class="text">秒 </span>
+        </div>
+    </div>
+    <script>function updateTime() {
+            // 获取当前时间
+            const now = new Date();
+            // 获取小时数
+            const hours = now.getHours();
+            // 获取分钟数
+            const minutes = now.getMinutes();
+
+            // 获取秒数
+            const seconds = now.getSeconds();
+
+            // 格式化小时数，如果小时数小于 10，则在前面加上一个 0
+            const hoursFormatted = hours < 10 ? `0${hours}` : hours;
+            // 格式化分钟数，如果分钟数小于 10，则在前面加上一个 0
+            const minutesFormatted = minutes < 10 ? `0${minutes}` : minutes;
+            // 格式化秒数，如果秒数小于 10，则在前面加上一个 0
+            const secondsFormatted = seconds < 10 ? `0${seconds}` : seconds;
+            // 获取显示小时数的元素节点对象
+            const hoursElem = document.getElementById('hours');
+            // 获取显示分钟数的元素节点对象
+            const minutesElem = document.getElementById('minutes');
+            // 获取显示秒数的元素节点对象
+            const secondsElem = document.getElementById('seconds');
+            // 将格式化后的小时数设置为显示小时数的元素的文本内容
+            hoursElem.textContent = hoursFormatted;
+            // 将格式化后的分钟数设置为显示分钟数的元素的文本内容
+            minutesElem.textContent = minutesFormatted;
+            // 将格式化后的秒数设置为显示秒数的元素的文本内容
+            secondsElem.textContent = secondsFormatted;
+        }
+
+        setInterval(updateTime, 1000);
+        </script>
+        <h1>这是一个标题</h1>
+        <p>这是一个段落。</p>
+</body>
